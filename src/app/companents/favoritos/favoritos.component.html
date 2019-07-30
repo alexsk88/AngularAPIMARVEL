@@ -1,0 +1,45 @@
+<br/><br/><br/>
+<div class="w3-container w3-animate-left">
+  
+    <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-third">
+                    <h1>Mis Favoritos</h1>
+            </div>
+            <div class="w3-twothird">
+                <div class="w3-row">
+                    <div class="w3-col" style="width:90%">
+                        <label class="w3-text-red"><b>Mi Nombre</b></label>
+                        <input class="w3-input w3-left inputnamme" name="last" type="text" #name
+                        [(value)]="nameUser"  (keyup.enter)="savename(name.value)"
+                        [attr.disabled]="isDisabled ? '' : null"  />
+                    </div>
+                    <div class="w3-col" style="width:10%">
+                        <button class="w3-button w3-hover-none btnborde w3-right"
+                        (click)="editaruser(name.value)"
+                        style="position: relative; top: 20px;">
+                            <img src="assets/editar.png" class="pointer"
+                            width="30" alt="">
+                        </button>
+                    </div>
+                </div>
+                   
+            </div>
+            
+        </div>
+    </div>
+    <hr>
+
+    <ul class="w3-ul ulistafavorites" >
+        <li *ngFor="let heroe of misheroes"> 
+            <span class="w3-bar-item w3-hover-shadow pointer w3-red w3-large w3-right">
+                <a style="text-decoration: none" [routerLink]="['/heroe', heroe.id]">
+                    &nbsp;Ver&nbsp;
+                </a>
+            </span>
+            <div class="w3-bar-item">
+                <span class="w3-large">{{ heroe.name }}</span><br>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,94 @@
+<br>
+<br>
+<br>
+<div class="w3-container w3-animate-zoom" *ngIf="heroe; else loaD">
+    <div class="w3-section">
+        <button (click)="addfavorite(heroe.id, heroe.name)" *ngIf="favorite == false"
+                class="w3-animate-zoom w3-button w3-border w3-border-yellow w3-hover-none w3-round-large">
+            <img src="/assets/estrellavacia.png" width="40" alt="">
+           <b> Agregar A mis Favoritos</b>
+        </button>
+        <button (click)="removefavorite(heroe.id)" *ngIf="favorite == true"
+             class="w3-animate-zoom w3-button w3-border w3-border-yellow w3-hover-none w3-round-large">
+            <img src="/assets/estrellallena.png" width="40" alt="">
+           <b> Favorito</b>
+        </button>
+      
+    </div>
+    <div class="w3-row">
+        <div class="w3-col imgdetail">
+            <img src="{{ heroe.thumbnail.path | image: heroe.thumbnail.extension }}"
+             class="w3-border w3-padding img-fluid"
+            alt="..." />
+        </div>
+        <div class="w3-col detalleheroe">
+            <h1 class="letradetail"><b>{{ heroe.name }}</b></h1>
+            <hr>
+            <div class="w3-tag w3-round w3-green" style="padding:3px">
+                <div class=" w3-tag w3-round w3-green w3-border w3-border-white">
+                    <span class="letradetail">{{ heroe.modified | date :'fullDate' }}</span>
+                </div>
+            </div> <br>
+            <p  class="letradetail">
+                {{ heroe.description}}
+            </p>
+        </div>
+    </div>
+
+    <hr/>
+    <div class="w3-row ules">
+        <div class="w3-quarter w3-padding">
+           <div class=" w3-card">
+            <div class="w3-red w3-center"><h4><b>Comics</b></h4></div>
+            <ul class="w3-ul w3-hoverable">
+                <li *ngFor="let comic of heroe.comics.items; let i = index">
+                    <b>{{ i+1 }})</b> {{ comic.name }}
+                </li>
+            </ul><br/>
+           </div>
+        </div>
+        <div class="w3-quarter w3-padding">
+            <div class=" w3-card">
+                <div class="w3-red w3-center">
+                    <h4><b>Historias</b></h4>
+                </div>
+                <ul class="w3-ul w3-hoverable">
+                    <li *ngFor="let storie of heroe.stories.items; let i = index">
+                        <b>{{ i+1 }})</b> {{ storie.name }}
+                    </li>
+                </ul><br/>
+            </div>
+        </div>
+        <div class="w3-quarter w3-padding">
+            <div class=" w3-card">
+                <div class="w3-red w3-center">
+                    <h4><b>Series</b></h4>
+                </div>
+                <ul class="w3-ul w3-hoverable">
+                    <li *ngFor="let serie of heroe.series.items; let i = index">
+                        <b>{{ i+1 }})</b> {{ serie.name }}
+                    </li>
+                </ul><br/>
+            </div>
+        </div>
+        <div class="w3-quarter w3-padding">
+            <div class=" w3-card">
+                <div class="w3-red w3-center">
+                    <h4><b>Eventos</b></h4>
+                </div>
+                <ul class="w3-ul w3-hoverable">
+                    <li *ngFor="let event of heroe.events.items; let i = index">
+                        <b>{{ i+1 }})</b> {{ event.name }}
+                    </li> 
+                </ul><br/>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<ng-template #loaD>
+    <div class="w3-center" style="padding-top: 70px;">
+        <h1><b>Cargando</b></h1>
+        <img src="/assets/load.png" width="50" alt="Cargando" class="w3-spin">
+    </div>
+</ng-template>

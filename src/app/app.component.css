@@ -1,0 +1,26 @@
+@media (min-width: 200px) and (max-width: 767px) 
+{
+    .menupc
+    {
+        display: none;
+    }
+
+    .menumobile
+    {
+        display: block;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 2200px) 
+{
+    .menupc
+    {
+        display: block;
+    }
+
+    .menumobile
+    {
+        display: none;
+    }
+}

@@ -1,0 +1,67 @@
+<div class="w3-bar w3-top w3-border w3-white w3-card">
+  <a [routerLink]="[ '/heroes',0]"   class="w3-bar-item">
+    <img src="assets/logo.png" width="35" alt="">
+  </a>
+  <div class="w3-padding menupc">
+    <a [routerLink]="[ '/heroes',0]" onclick="topFunction()"  
+       class="w3-bar-item w3-button w3-hover-red w3-text-grey w3-hover-text-white">
+      Heroes
+    </a>
+    <a [routerLink]="[ '/favoritos']"   onclick="topFunction()"
+       class="w3-bar-item w3-button w3-hover-red w3-text-grey w3-hover-text-white">
+      Mis Heroes Favoritos
+    </a>
+    <a [routerLink]="[ '/informacion']"  onclick="topFunction()" 
+       class="w3-bar-item w3-button w3-hover-red w3-text-grey w3-hover-text-white">
+      Sobre la APP
+    </a>
+  </div>
+  
+  <div class="menumobile">
+    <img src="assets/menu.png" 
+    class="pointer w3-right w3-margin-right w3-margin-top"  width="40" alt=""
+    onclick="document.getElementById('modalmenu').style.display='block'"/>
+
+    <div id="modalmenu" class="w3-modal">
+      <div class="w3-modal-content w3-center w3-animate-top">
+        <header class="w3-container w3-red">
+          <span onclick="ocultarModal()"
+            class="w3-button w3-display-topright">&times;</span>
+          <h2>MENU</h2>
+        </header>
+        <div class="w3-container">
+          <p>
+            <a [routerLink]="[ '/heroes',0]"  onclick="ocultarModal()"
+               class="w3-button w3-hover-red w3-text-grey w3-hover-text-white">
+              Heroes
+            </a>
+          </p>
+          <p>
+            <a [routerLink]="[ '/favoritos']"  onclick="ocultarModal()"
+               class="w3-button w3-hover-red w3-text-grey w3-hover-text-white">
+              Mis Heroes Favoritos
+            </a>
+          </p>
+          <p>
+            <a [routerLink]="[ '/informacion']"  onclick="ocultarModal()"
+               class="w3-button w3-hover-red w3-text-grey w3-hover-text-white">
+              Sobre la APP
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-padding">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="w3-container w3-red w3-center w3-margin-top" style="margin-top: 250px !important;">
+    <p>Encuentrame.</p>
+    <i class="w3-large w3-padding fa fa-google w3-hover-opacity"></i>
+    <i class="w3-large w3-padding fa fa-github w3-hover-opacity"></i>
+    <i class="w3-large w3-padding fa fa-linkedin w3-hover-opacity"></i>
+    <p><b class="w3-large">A</b>lexander <b class="w3-large">N</b>ova <i><b class="w3-large">Desings</b></i></p>
+  </footer>

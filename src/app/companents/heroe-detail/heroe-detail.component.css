@@ -1,0 +1,41 @@
+@media (min-width: 200px) and (max-width: 499px) 
+{
+    .letradetail
+    {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 800px) 
+{
+    .imgdetail
+    {
+        width: 30%;
+    }
+    .detalleheroe
+    {
+        width: 70%;
+        padding-left: 10px;
+    }
+    .letradetail
+    {
+        font-size: 15px;
+    }
+    .ules
+    {
+        font-size: 11px;
+    }
+}
+@media (min-width: 768px) and (max-width: 2000px) 
+{
+
+    .imgdetail
+    {
+        width: 30%;
+    }
+    .detalleheroe
+    {
+        width: 70%;
+        padding-left: 10px;
+    }
+}
